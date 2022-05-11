@@ -11,14 +11,7 @@ struct ContentView: View {
     var body: some View {
         Text("You are super cool! hehe")
             .padding()
-        
-        
-        
-        
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
+        Text("hi Carlos")
     static var previews: some View {
         ContentView()
     }
