@@ -12,7 +12,7 @@ struct ContentView: View {
         Text("You are super cool! hehe")
             .padding()
         Text("hi Carlos")
-    static var previews: some View {
+        var previews: some View {
         ContentView()
     }
 }
