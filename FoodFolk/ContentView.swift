@@ -14,20 +14,23 @@ struct ContentView: View {
             List{
                 
                 NavigationLink {
-                    QuizView()
+                    RestaurantSelectionView()
                 } label: {
-                    Text("Start Quiz")
+                    Image(systemName: "questionmark.circle")
+                    Text("Start your search here!")
                 }
                 
                 NavigationLink {
                     FavoritePlacesView()
                 } label: {
+                    Image(systemName: "star.circle")
                     Text("Favorite Places")
                 }
 
                 NavigationLink {
                     RouletteView()
                 } label: {
+                    Image(systemName: "sun.max.circle")
                     Text("Random Roulette!")
                 }
                 

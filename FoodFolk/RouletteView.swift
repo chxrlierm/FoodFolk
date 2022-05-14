@@ -24,10 +24,12 @@ enum Color: String {
     case red = "Red"
     case empty = "Please press SPIN"
 }
+
 struct Sector: Equatable {
     let number: Int
     let color: Color
 }
+
 struct RouletteView: View {
     @State private var isAnimating = false
     @State private var spinDegrees = 0.0
