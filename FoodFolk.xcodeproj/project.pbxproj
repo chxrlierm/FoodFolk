@@ -11,6 +11,7 @@
 		8448C6C6282E1AFA00F2191D /* FavoritePlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448C6C5282E1AFA00F2191D /* FavoritePlacesView.swift */; };
 		8448C6C8282E1B5100F2191D /* RouletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448C6C7282E1B5100F2191D /* RouletteView.swift */; };
 		84A56001282F5DA8008D13BE /* RestaurantSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A56000282F5DA8008D13BE /* RestaurantSelectionView.swift */; };
+		84A56009282FF96F008D13BE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A56008282FF96F008D13BE /* HomeView.swift */; };
 		84BD3058282FA085001EE271 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BD3057282FA085001EE271 /* LaunchScreen.storyboard */; };
 		84C3D99E2826CBC70087A5B8 /* FoodFolkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3D99D2826CBC70087A5B8 /* FoodFolkApp.swift */; };
 		84C3D9A02826CBC70087A5B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3D99F2826CBC70087A5B8 /* ContentView.swift */; };
@@ -23,6 +24,7 @@
 		8448C6C5282E1AFA00F2191D /* FavoritePlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlacesView.swift; sourceTree = "<group>"; };
 		8448C6C7282E1B5100F2191D /* RouletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteView.swift; sourceTree = "<group>"; };
 		84A56000282F5DA8008D13BE /* RestaurantSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSelectionView.swift; sourceTree = "<group>"; };
+		84A56008282FF96F008D13BE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		84BD3057282FA085001EE271 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84C3D99A2826CBC70087A5B8 /* FoodFolk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFolk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C3D99D2826CBC70087A5B8 /* FoodFolkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodFolkApp.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				84C3D99D2826CBC70087A5B8 /* FoodFolkApp.swift */,
 				84C3D99F2826CBC70087A5B8 /* ContentView.swift */,
+				84A56008282FF96F008D13BE /* HomeView.swift */,
 				8448C6C7282E1B5100F2191D /* RouletteView.swift */,
 				8448C6C5282E1AFA00F2191D /* FavoritePlacesView.swift */,
 				84A56000282F5DA8008D13BE /* RestaurantSelectionView.swift */,
@@ -158,6 +161,7 @@
 				8448C6C6282E1AFA00F2191D /* FavoritePlacesView.swift in Sources */,
 				84C3D99E2826CBC70087A5B8 /* FoodFolkApp.swift in Sources */,
 				8448C6C8282E1B5100F2191D /* RouletteView.swift in Sources */,
+				84A56009282FF96F008D13BE /* HomeView.swift in Sources */,
 				8448C6C2282E131A00F2191D /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

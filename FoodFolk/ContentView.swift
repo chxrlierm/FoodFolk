@@ -10,32 +10,20 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            
-            List{
-                
+            VStack {
+                Text("Welcome to FoodFolk!")
+                Text("The app that tells you where you eat...")
                 NavigationLink {
-                    RestaurantSelectionView()
+                    HomeView()
                 } label: {
-                    Image(systemName: "questionmark.circle")
-                    Text("Start your search here!")
-                }
-                
-                NavigationLink {
-                    FavoritePlacesView()
-                } label: {
-                    Image(systemName: "star.circle")
-                    Text("Favorite Places")
+
+                    Text("Let's Start")
                 }
 
-                NavigationLink {
-                    RouletteView()
-                } label: {
-                    Image(systemName: "sun.max.circle")
-                    Text("Random Roulette!")
-                }
                 
-                
-            }//End of List
+              
+            }//End of VStack
+          
         }// End of NavigationView
        
         
