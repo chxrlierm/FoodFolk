@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Roulette.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
