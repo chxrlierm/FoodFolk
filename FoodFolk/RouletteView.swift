@@ -14,14 +14,14 @@ import SwiftUI
 //}
 
 enum Color: String {
-    case purple = "Purple"
-    case navyblue = "Navy Blue"
-    case blue = "Blue"
-    case green = "Green"
-    case black = "Black"
-    case yellow = "Yellow"
-    case orange = "Orange"
-    case red = "Red"
+    case purple = "Italian"
+    case navyblue = "Mexican"
+    case blue = "American"
+    case green = "Chinese"
+    case black = "Italiane"
+    case yellow = "Mexicane"
+    case orange = "Americane"
+    case red = "Chinesee"
     case empty = "Please press SPIN"
 }
 
@@ -57,7 +57,7 @@ struct RouletteView: View {
     }
     
     func sectorFromAngle(angle: Double) -> String {
-        var i = 0
+        var i = 1
         var sector: Sector = Sector(number: 0, color: .empty)
         
         while sector == Sector(number: 0, color: .empty) && i < sectors.count {
@@ -69,7 +69,7 @@ struct RouletteView: View {
             }
             i+=1
         }
-        return "Sector\n\(sector.number) \(sector.color.rawValue)"
+        return "Restaurant:\n\(sector.color.rawValue)"
     }
     
     var body: some View {
