@@ -27,7 +27,7 @@ struct HomeView: View {
                     RestaurantSelectionView(restaurant: $restaurantInfo)
                 } label: {
                     Image(systemName: "questionmark.circle")
-                    Text("Start your search here!" 
+                    Text("Start your search here!")
                 }
                 
                 NavigationLink {
