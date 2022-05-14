@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RestaurantSelectionView: View {
+    @Binding var restaurant: Restaurant
+    
     var body: some View {
         VStack {
             Text("Let's find you the best option where to eat!")
@@ -16,33 +18,45 @@ struct RestaurantSelectionView: View {
             Text("Which type of food would you like to eat?")
                 .padding(.bottom, 20)
             
-        //Mex Btn
-            Button {
+            Picker("Restaurants", selection: $restaurant.cuisineType) {
                 
-            } label: {
-                Text("Mexican")
-            }//End of Mexican BTN
+                Text("Mexican").tag(CusineTypes.mexican)
+                
+                Text("American").tag(CusineTypes.american)
+                
+                Text("Italian").tag(CusineTypes.italian)
+                
+                Text("Chinese").tag(CusineTypes.chinese)
+                
+            }.pickerStyle(.wheel)
             
-        //American Btn
-            Button {
-                
-            } label: {
-                Text("American")
-            }//End of American BTN
-            
-        //Chinese Btn
-            Button {
-                
-            } label: {
-                Text("Chinese")
-            }//End of Chinese BTN
-            
-        //Italian Btn
-            Button {
-                
-            } label: {
-                Text("Italian")
-            }//End of Italian BTN
+//        //Mex Btn
+//            Button {
+//
+//            } label: {
+//                Text("Mexican")
+//            }//End of Mexican BTN
+//
+//        //American Btn
+//            Button {
+//
+//            } label: {
+//                Text("American")
+//            }//End of American BTN
+//
+//        //Chinese Btn
+//            Button {
+//
+//            } label: {
+//                Text("Chinese")
+//            }//End of Chinese BTN
+//
+//        //Italian Btn
+//            Button {
+//
+//            } label: {
+//                Text("Italian")
+//            }//End of Italian BTN
 
         }//End of MainVStack
     }
@@ -50,6 +64,6 @@ struct RestaurantSelectionView: View {
 
 struct RestaurantSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantSelectionView()
+        RestaurantSelectionView(restaurant: .constant(Restaurant(name: "Carlos", cuisineType: .mexican, priceRange: .three, rating: 4.6, image: "")) )
     }
 }

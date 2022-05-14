@@ -12,6 +12,7 @@ struct HomeView: View {
     var name: String
     @State var clickSave = true
     @State var userInput: String = ""
+    @State var restaurantInfo: Restaurant
     
     var body: some View {
         
@@ -23,10 +24,10 @@ struct HomeView: View {
             List{
                 
                 NavigationLink {
-                    RestaurantSelectionView()
+                    RestaurantSelectionView(restaurant: $restaurantInfo)
                 } label: {
                     Image(systemName: "questionmark.circle")
-                    Text("Start your search here!")
+                    Text("Start your search here!" 
                 }
                 
                 NavigationLink {
@@ -51,6 +52,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(name: "Kevin")
+        HomeView(name: "Kevin", restaurantInfo: (Restaurant(name: "", cuisineType: .mexican, priceRange: .four, rating: 4.6, image: "")))
     }
 }

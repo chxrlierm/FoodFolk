@@ -18,7 +18,7 @@ struct UserInfoView: View {
         
         VStack {
             NavigationLink(isActive: $showHomeView) {
-                HomeView(name: userInput)
+                HomeView(name: userInput, restaurantInfo: Restaurant(name: "", cuisineType: .mexican, priceRange: .four, rating: 4.6, image: ""))
             } label: {
                 EmptyView()
             }
@@ -26,6 +26,7 @@ struct UserInfoView: View {
             Text("What's your name?")
             
             TextField("Enter your name here", text: $userInput)
+                .padding()
             
             Button(action: {
                 showHomeView = true
