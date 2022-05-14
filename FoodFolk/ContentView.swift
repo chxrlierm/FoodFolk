@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var userInput: String = ""
+    @State var clickSave = true
+    
     var body: some View {
         NavigationView {
+            
             VStack {
                 Text("Welcome to FoodFolk!")
                 Text("The app that tells you where you eat...")
                 NavigationLink {
-                    HomeView()
+                    UserInfoView(clickSave: $clickSave, userInput: $userInput)
                 } label: {
 
                     Text("Let's Start")
                 }
+                
+
 
                 
               
