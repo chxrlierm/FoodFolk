@@ -10,6 +10,7 @@ import SwiftUI
 struct RestaurantSelectionView: View {
     @Binding var restaurant: Restaurant
     
+    
     var body: some View {
         VStack {
             Text("Let's find you the best option where to eat!")
@@ -30,33 +31,22 @@ struct RestaurantSelectionView: View {
                 
             }.pickerStyle(.wheel)
             
-//        //Mex Btn
-//            Button {
-//
-//            } label: {
-//                Text("Mexican")
-//            }//End of Mexican BTN
-//
-//        //American Btn
-//            Button {
-//
-//            } label: {
-//                Text("American")
-//            }//End of American BTN
-//
-//        //Chinese Btn
-//            Button {
-//
-//            } label: {
-//                Text("Chinese")
-//            }//End of Chinese BTN
-//
-//        //Italian Btn
-//            Button {
-//
-//            } label: {
-//                Text("Italian")
-//            }//End of Italian BTN
+            Text("What price range will you prefer?")
+                .padding(.bottom, 20)
+            
+            Picker("Price Range", selection: $restaurant.priceRange) {
+                Text("$").tag(Prices.one)
+                
+                Text("$$").tag(Prices.two)
+                
+                Text("$$$").tag(Prices.three)
+                Text("$$$$").tag(Prices.four)
+                
+            }.pickerStyle(SegmentedPickerStyle())
+            
+            
+           
+
 
         }//End of MainVStack
     }
@@ -64,6 +54,6 @@ struct RestaurantSelectionView: View {
 
 struct RestaurantSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantSelectionView(restaurant: .constant(Restaurant(name: "Carlos", cuisineType: .mexican, priceRange: .three, rating: 4.6, image: "")) )
+        RestaurantSelectionView(restaurant: .constant(Restaurant(name: "Carlos", cuisineType: .mexican, priceRange: .three, rating: 4.6, image: "")))
     }
 }
