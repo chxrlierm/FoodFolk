@@ -44,8 +44,18 @@ struct RestaurantSelectionView: View {
                 
             }.pickerStyle(SegmentedPickerStyle())
             
-            
-           
+            NavigationLink {
+                HomeView(name: "", clickSave: false, userInput: "", restaurantInfo: Restaurant(name: "", cuisineType: .mexican, priceRange: .one, rating: 4.6, image: ""))
+
+            } label: {
+                Text("Start")
+                Button {
+                    
+                } label: {
+                    Text("Start")
+                }
+
+            }
 
 
         }//End of MainVStack
