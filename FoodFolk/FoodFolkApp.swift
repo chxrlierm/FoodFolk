@@ -11,7 +11,7 @@ import SwiftUI
 struct FoodFolkApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(userInput: "")
         }
     }
 }

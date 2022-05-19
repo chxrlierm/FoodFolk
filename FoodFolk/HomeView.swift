@@ -10,21 +10,18 @@ import SwiftUI
 struct HomeView: View {
     
     var name: String
-    @State var clickSave = true
-    @State var userInput: String = ""
     @State var restaurantInfo: Restaurant
     
     var body: some View {
         
         VStack {
             
-            
             Text("Welcome \(name)")
             
             List{
                 
                 NavigationLink {
-                    RestaurantSelectionView(restaurant: $restaurantInfo)
+                    RestaurantSelectionView(restaurant: restaurantInfo)
                 } label: {
                     Image(systemName: "questionmark.circle")
                     Text("Start your search here!")
@@ -45,8 +42,14 @@ struct HomeView: View {
                 }
                 
                 
-            }
-        }//End of List
+                
+                
+            }// End of List
+            
+ 
+        }// End of VStack
+        
+    
     }
 }
 
