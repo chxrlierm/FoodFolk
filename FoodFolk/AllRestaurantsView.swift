@@ -19,42 +19,52 @@ struct AllRestaurantsView: View {
         VStack(alignment: .leading) {
             
             
-            List{
-  
-                ForEach(restaurants) { restaurantLists in
-                    
-                    
-                    VStack (alignment: .leading) {
-                        
-                        HStack{
-                            Image("\(restaurantLists.image)")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 80)
-                            
-                            Spacer()
-                            
-                            VStack(alignment: .leading) {
-                                Text ("\(restaurantLists.name)")
-                                Text ("Cuisine Type: \(restaurantLists.cuisineType.rawValue)")
-                                Text ("\(restaurantLists.priceRange.rawValue)")
-                                Text ("Rating: \(restaurantLists.rating, specifier: "%.1f")")
-
-                            }
-                        }
-                        
-                        
-                    }.padding(5)
-                        
-                        
-                    
-                }//end of ForEach
+            
+            ZStack {
                 
-            }.navigationTitle("FoodFolk")
+                List{
+      
+                    ForEach(restaurants) { restaurantLists in
+                        
+                        
+                        VStack (alignment: .leading) {
+                            
+                            HStack{
+                                Image("\(restaurantLists.image)")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 80)
+                                
+                                Spacer()
+                                
+                                VStack(alignment: .leading) {
+                                    Text ("\(restaurantLists.name)")
+                                    Text ("Cuisine Type: \(restaurantLists.cuisineType.rawValue)")
+                                    Text ("\(restaurantLists.priceRange.rawValue)")
+                                    Text ("Rating: \(restaurantLists.rating, specifier: "%.1f")")
+
+                                }
+                            }
+                            
+                            
+                        }.padding(5)
+                            
+                            
+                        
+                    }//end of ForEach
+                    
+                }.navigationTitle("FoodFolk")
+            }
+            
+             
+            
+               
                 // End of List
            
         
         }//End of VStack
+        
+        
     }
 }
 

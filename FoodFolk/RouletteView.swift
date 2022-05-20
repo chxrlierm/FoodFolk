@@ -7,47 +7,42 @@
 
 import SwiftUI
 
-//struct RouletteView: View {
-  //  var body: some View {
-    //    Text("Time for some Roulette!")
-    //}
-//}
-
 enum Color: String {
-    case purple = "Italian"
-    case navyblue = "Mexican"
-    case blue = "American"
-    case green = "Chinese"
-    case black = "Italiane"
-    case yellow = "Mexicane"
-    case orange = "Americane"
-    case red = "Chinesee"
+    case purple = "American"
+    case navyblue = "Chinese"
+    case blue = "Mexican"
+    case green = "Italian"
     case empty = "Please press SPIN"
 }
+
 
 struct Sector: Equatable {
     let number: Int
     let color: Color
 }
 
+
 struct RouletteView: View {
     @State private var isAnimating = false
     @State private var spinDegrees = 0.0
     @State private var rand = 0.0
     @State private var newAngle = 0.0
+    
     let halfSector = 360.0 / 8.0 / 2.0
-    let sectors: [Sector] = [Sector(number: 0, color: .empty),
-                             Sector(number: 1, color: .navyblue),
-                             Sector(number: 2, color: .blue),
-                             Sector(number: 3, color: .green),
-                             Sector(number: 4, color: .black),
-                             Sector(number: 5, color: .yellow),
-                             Sector(number: 6, color: .orange),
-                             Sector(number: 7, color: .red),
-                             Sector(number: 8, color: .purple),
-                             ]
+    
+    let sectors: [Sector] = [
+        Sector(number: 1, color: .purple),
+        Sector(number: 2, color: .navyblue),
+        Sector(number: 3, color: .blue),
+        Sector(number: 4, color: .green),
+        Sector(number: 5, color: .purple),
+        Sector(number: 6, color: .navyblue),
+        Sector(number: 7, color: .blue),
+        Sector(number: 8, color: .green),
+    ]
+    
     var spinAnimation: Animation {
-        Animation.easeOut(duration: 3.0)
+        Animation.easeOut(duration: 1.5)
             .repeatCount(1, autoreverses: false)
     }
     
@@ -72,15 +67,18 @@ struct RouletteView: View {
         return "Restaurant:\n\(sector.color.rawValue)"
     }
     
+    
     var body: some View {
         VStack {
             Text(self.isAnimating ? "Spining\n..." : sectorFromAngle(angle : newAngle))
                 .multilineTextAlignment(.center)
+                .font(.system(size: 25, weight: .bold, design: .monospaced))
+                .foregroundColor(.orange)
             Image("Arrow")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 25, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Image("roulette")
+            Image("Roulette2")
                 .resizable()
                 .scaledToFit()
                 .rotationEffect(Angle(degrees: spinDegrees))
@@ -97,6 +95,12 @@ struct RouletteView: View {
             }
             .padding(40)
             .disabled(isAnimating == true)
+            .frame(width: 150, height: 45)
+            .foregroundColor(.white)
+            .background(.orange)
+            .cornerRadius(10)
+            .font(.system(size: 26, weight: .heavy, design: .monospaced))
+            
         }
     }
 }
@@ -104,7 +108,7 @@ struct RouletteView: View {
 struct RouletteView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-        RouletteView()
+            RouletteView()
         }
     }
 }
