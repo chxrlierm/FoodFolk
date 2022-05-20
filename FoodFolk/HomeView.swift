@@ -16,10 +16,7 @@ struct HomeView: View {
         
         VStack {
             
-            Text("Welcome \(name)")
-            
             List{
-                
                 NavigationLink {
                     RestaurantSelectionView(restaurant: restaurantInfo)
                 } label: {
@@ -28,12 +25,12 @@ struct HomeView: View {
                 }
                 
                 NavigationLink {
-                    FavoritePlacesView()
+                    FavoritePlacesView(favorite: Restaurant(name: "", cuisineType: .mexican, priceRange: .two, rating: 5.0, image: ""))
                 } label: {
                     Image(systemName: "star.circle")
                     Text("Favorite Places")
                 }
-
+                
                 NavigationLink {
                     RouletteView()
                 } label: {
@@ -41,20 +38,30 @@ struct HomeView: View {
                     Text("Random Roulette!")
                 }
                 
+                NavigationLink {
+                    AllRestaurantsView(restaurants: Restaurant.restaurantsList)
+                } label: {
+                    Image("foodIcon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25)
+                        .foregroundColor(.white)
+                    Text("Restaurants List")
+                }
                 
                 
                 
-            }// End of List
-            
- 
+            }.navigationTitle("Welcome \(name)")
+                
+               
         }// End of VStack
         
-    
+        
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(name: "Kevin", restaurantInfo: (Restaurant(name: "", cuisineType: .mexican, priceRange: .four, rating: 4.6, image: "")))
+        HomeView(name: "", restaurantInfo: (Restaurant(name: "", cuisineType: .mexican, priceRange: .four, rating: 4.6, image: "")))
     }
 }

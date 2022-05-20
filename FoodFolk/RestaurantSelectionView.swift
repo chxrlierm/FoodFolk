@@ -10,17 +10,11 @@ import SwiftUI
 struct RestaurantSelectionView: View {
     var restaurant: Restaurant
     @State var clickBtn: Bool = true
-    @State var newArray: [Restaurant] = []
-    
-    @State var newArrayFiler: [Restaurant] = Restaurant.restaurantsList.filter {
-        $0.cuisineType.rawValue == "Mexican"
-    }
-    
     @State var showAllRestaurantsView: Bool = false
     
-    @State var selectPriceRangeIndex = ""
-
     
+    
+
     var body: some View {
         
         VStack {
@@ -33,30 +27,15 @@ struct RestaurantSelectionView: View {
             ForEach (CusineTypes.allCases, id: \.self){ restType in
                 NavigationLink(isActive: $showAllRestaurantsView) {
                     
-                    
-
-//                    let filterItems = Restaurant.restaurantsList.filter{
-//                        $0.cuisineType.rawValue == restType.rawValue
-//                    }
-//
-//                    let newArrayRestaurant: [Restaurant] = filterItems
-//                    
-//                    
+         
                     
                     FilterRestaurantView(restaurant: restaurant)
                    
-                    
-                    
- 
-//                    AllRestaurantsView(restaurants: Restaurant.restaurantsList.filter{ $0.cuisineType.rawValue == restType.rawValue}
-                  
-                           
-                    //)
+
 
                     
                 } label: {
-                    
-//                    Text("\(restType.rawValue)")
+
                     EmptyView()
                     
                 }
@@ -75,61 +54,8 @@ struct RestaurantSelectionView: View {
       
             }//End of forEach FOR CUISINETYPE
             
-
-            Text("What price range will you prefer?")
-                .padding(.bottom, 20)
-            
-//            Picker("Price", selection: $selectPriceRangeIndex, content:{
-//
-//                Text("$").tag(0)
-//                Text("$$").tag(1)
-//
-//
-//            })
-            
-            Text("Select Price: \(selectPriceRangeIndex)")
-            
-            Picker("Price Range", selection: $selectPriceRangeIndex) {
-                
-                ForEach (Prices.allCases, id: \.self) {
-                    priceRange in
-                    Text(priceRange.rawValue).tag(Prices.allCases.firstIndex(of: priceRange))
-                }
-
-                
-            }.pickerStyle(SegmentedPickerStyle())
-            
-           Text("Index: \(selectPriceRangeIndex)")
-            
-            
-
- 
-//                    Picker("Price Range", selection: restaurant.priceRange) {
-//
-//                        ForEach (Prices.allCases, id: \.self) {
-//                            priceRange in
-//                            Text(priceRange.rawValue).tag(priceRange)
-//                        }
-//
-//
-//                    }.pickerStyle(SegmentedPickerStyle())
-         
-            NavigationLink {
-                
-                
-              
-                
-                
-                
-                
-                
-            } label: {
-                
-                Text("Start")
-                
-            }
-            
-            
+            Spacer()
+                        
         }//End of MainVStack
     }
 }

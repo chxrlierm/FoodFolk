@@ -159,6 +159,7 @@ var filteredRestaurant: [Restaurant] = []
 
 var restaurantCard: [Restaurant] = []
 
+var favorites: [Restaurant] = []
 
 
 func filterByCousineType (cuisineType: String) {
@@ -173,7 +174,7 @@ func filterByCousineType (cuisineType: String) {
 }
 
 func filterByPriceRange (priceRange: String) {
-    
+
     for price in filteredRestaurant {
         if price.priceRange.rawValue == priceRange {
             let priceRangeFilter = filteredRestaurant.filter{
@@ -182,7 +183,13 @@ func filterByPriceRange (priceRange: String) {
             restaurantCard.append(contentsOf: priceRangeFilter)
         }
     }
-    
+
+}
+
+func addToFavorites () {
+
+        favorites.append(contentsOf: restaurantCard)
+
 }
 
 func filterArray () {

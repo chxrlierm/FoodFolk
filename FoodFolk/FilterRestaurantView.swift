@@ -14,19 +14,20 @@ struct FilterRestaurantView: View {
     @State var clickBtn: Bool = true
     @State var selectPriceRangeIndex = 0
     @State var showAllRestaurantsView: Bool = false
+
     
     
     @Environment(\.presentationMode) private var presentationMode
     
-
+    
     
     var body: some View {
         
         VStack {
-
+            
             
             List{
-  
+                
                 ForEach(filteredRestaurant) { restaurantLists in
                     
                     
@@ -43,44 +44,17 @@ struct FilterRestaurantView: View {
             Text("What price range will you prefer?")
                 .padding(.bottom, 20)
             
-//                        Picker("Price", selection: $selectPriceRangeIndex, content:{
-//
-//                            ForEach (Prices.allCases, id: \.self) {
-//                                priceRange in
-//                                Text(priceRange.rawValue).tag(Prices.allCases.firstIndex(of: priceRange))
-//                            }
-//
-//
-//                        }).pickerStyle(SegmentedPickerStyle())
-//
-//                        Text("Select Price: \(selectPriceRangeIndex)")
-
+            
             ForEach (Prices.allCases, id: \.self){ price in
                 NavigationLink(isActive: $showAllRestaurantsView) {
                     
+   
+                    RestaurantCard(restaurantList: restaurant, favoriteState: $clickBtn)
                     
-
-//                    let filterItems = Restaurant.restaurantsList.filter{
-//                        $0.cuisineType.rawValue == restType.rawValue
-//                    }
-//
-//                    let newArrayRestaurant: [Restaurant] = filterItems
-//
-//
-                    
-                    RestaurantCard(restaurantList: restaurant)
-                    
-                    //AllRestaurantsView(restaurants: newArray)
-                    
-                    
-                  
-                           
-                    //)
 
                     
                 } label: {
                     
-//                    Text("\(restType.rawValue)")
                     EmptyView()
                     
                 }
@@ -89,14 +63,14 @@ struct FilterRestaurantView: View {
                     
                     
                     filterByPriceRange(priceRange: "\(price.rawValue)")
-                        
+                    
                     showAllRestaurantsView = true
                     
                 } label: {
                     Text("\(price.rawValue)")
                 }
-
-      
+                
+                
             }//End of forEach FOR CUISINETYPE
             
         }//EndOFVStack
