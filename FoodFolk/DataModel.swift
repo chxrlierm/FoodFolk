@@ -55,19 +55,19 @@ extension Restaurant {
                     cuisineType: CusineTypes.american,
                     priceRange: Prices.two,
                     rating: 4.7,
-                    image: ""),
+                    image: "Inspiration"),
         
         Restaurant (name: "S.K.Y",
                     cuisineType: CusineTypes.american,
                     priceRange: Prices.three,
                     rating: 4.7,
-                    image: ""),
+                    image: "sky"),
         
         Restaurant (name: "Alinea",
                     cuisineType: CusineTypes.american,
                     priceRange: Prices.four,
                     rating: 4.6,
-                    image: ""),
+                    image: "Alinea"),
         
         //CHINESE LIST
         
@@ -75,25 +75,25 @@ extension Restaurant {
                     cuisineType: CusineTypes.chinese,
                     priceRange: Prices.one,
                     rating: 4.6,
-                    image: ""),
+                    image: "chinaSnack"),
         
         Restaurant (name: "Xi'an Cuisine",
                     cuisineType: CusineTypes.chinese,
                     priceRange: Prices.two,
                     rating: 4.7,
-                    image: ""),
+                    image: "Xian"),
         
         Restaurant (name: "Duck Duck Goat",
                     cuisineType: CusineTypes.chinese,
                     priceRange: Prices.three,
                     rating: 4.6,
-                    image: ""),
+                    image: "duckDuckGoat"),
         
         Restaurant (name: "Shangai Terrace",
                     cuisineType: CusineTypes.chinese,
                     priceRange: Prices.four,
                     rating: 4.6,
-                    image: "Shangai"),
+                    image: "Shanghai"),
         
         //MEXICAN List
         
@@ -107,7 +107,7 @@ extension Restaurant {
                     cuisineType: CusineTypes.mexican,
                     priceRange: Prices.two,
                     rating: 4.5,
-                    image: ""),
+                    image: "Xoco"),
         
         Restaurant (name: "Leña Brava",
                     cuisineType: CusineTypes.mexican,
@@ -119,7 +119,7 @@ extension Restaurant {
                     cuisineType: CusineTypes.mexican,
                     priceRange: Prices.four,
                     rating: 4.6,
-                    image: ""),
+                    image: "tzuco"),
         
         //ITALIAN List
         
@@ -127,25 +127,25 @@ extension Restaurant {
                     cuisineType: CusineTypes.italian,
                     priceRange: Prices.one,
                     rating: 4.6,
-                    image: ""),
+                    image: "pastaPalazzo"),
         
         Restaurant (name: "Bacchanalia",
                     cuisineType: CusineTypes.italian,
                     priceRange: Prices.two,
                     rating: 4.7,
-                    image: ""),
+                    image: "bacchanalia"),
         
         Restaurant (name: "Gaia Ristorante Italiano",
                     cuisineType: CusineTypes.italian,
                     priceRange: Prices.three,
                     rating: 4.9,
-                    image: ""),
+                    image: "gaia"),
         
         Restaurant (name: "Segnatore",
                     cuisineType: CusineTypes.italian,
                     priceRange: Prices.four,
                     rating: 4.6,
-                    image: ""),
+                    image: "segnatore"),
         
         
     ]

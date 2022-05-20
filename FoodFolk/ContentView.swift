@@ -53,19 +53,18 @@ struct ContentView: View {
                     
                 }, label: {
                     Text ("Let's Start")
-                        .font(.callout)
-                        .fontWeight(.heavy)
+                        .font(.system(size: 20, weight: .heavy, design: .monospaced))
                         .foregroundColor(.white)
-                       
-
-                    
+ 
                 }).disabled(userInput.count < 2)
-                    .frame(width: 100, height: 35)
+                    .frame(width: 150, height: 40)
                     .foregroundColor(.white)
                     .background(.orange)
-                    .cornerRadius(5)
+                    .cornerRadius(10)
                     
-
+                    
+                    
+                
                 Spacer()
                 
             }//End of VStack
