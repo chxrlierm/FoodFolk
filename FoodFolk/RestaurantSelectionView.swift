@@ -38,6 +38,8 @@ struct RestaurantSelectionView: View {
                     
                     FilterRestaurantView(restaurant: restaurant)
                     
+                    
+                    
                 } label: {
                     
                     EmptyView()

@@ -15,17 +15,43 @@ struct FilterRestaurantView: View {
     @State var selectPriceRangeIndex = 0
     @State var showAllRestaurantsView: Bool = false
     
+    var textSelection: String {
+        get {
+            
+          
+
+            if restaurant.cuisineType.rawValue == "Mexican" {
+                return cusineTypeStatus(cusineType: .mexican)
+            }else if (restaurant.cuisineType.rawValue == "American") {
+                return cusineTypeStatus(cusineType: .american)
+            }
+            
+            return "MAKE A DIFFERENT SELECTION"
+            
+        }
+    }
+    
+//    var tipAmount: Double {
+//
+//        get {
+//            let billInput = Double(billAmountInput) ?? 0
+//
+//            return billInput * tipPercentage/100
+//        }
+//
+//    }
+    
     @Environment(\.presentationMode) private var presentationMode
     
     
     var body: some View {
         
         VStack {
-            
+            Text ("\(textSelection)")
             List{
+
                 
                 ForEach(filteredRestaurant) { restaurantLists in
-                    
                     
                     VStack (alignment: .leading) {
                         
@@ -83,6 +109,6 @@ struct FilterRestaurantView: View {
 
 struct FilterRestaurantView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterRestaurantView(restaurant: (Restaurant(name: "", cuisineType: .mexican, priceRange: .one, rating: 4.5, image: "")))
+        FilterRestaurantView(restaurant: (Restaurant(name: "", cuisineType: .american, priceRange: .one, rating: 4.5, image: "")))
     }
 }

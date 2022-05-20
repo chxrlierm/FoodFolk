@@ -13,6 +13,8 @@ struct AllRestaurantsView: View {
     
     @State var selectPriceRangeIndex = 0
     
+
+    
     var body: some View {
         VStack(alignment: .leading) {
             
@@ -43,9 +45,14 @@ struct AllRestaurantsView: View {
                         
                         
                     }.padding(5)
+                        
+                        
                     
                 }//end of ForEach
-            }.navigationTitle("FoodFolk")// End of List
+                
+            }.navigationTitle("FoodFolk")
+                // End of List
+           
         
         }//End of VStack
     }
@@ -55,6 +62,7 @@ struct AllRestaurantsView_Previews: PreviewProvider {
     static var previews: some View {
  
         AllRestaurantsView(restaurants: Restaurant.restaurantsList)
+      
    
     }
 }

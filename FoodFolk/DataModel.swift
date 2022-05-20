@@ -67,7 +67,7 @@ extension Restaurant {
                     cuisineType: CusineTypes.american,
                     priceRange: Prices.four,
                     rating: 4.6,
-                    image: "Alinea"),
+                    image: "alinea"),
         
         //CHINESE LIST
         
@@ -212,6 +212,20 @@ func resetData () {
     
 }
 
+func cusineTypeStatus (cusineType: CusineTypes) -> String {
+    
+    switch cusineType {
+    case .mexican:
+        return "Nice selection! I see you like SPICY huh?!"
+    case .american:
+        return "Nice selection! no one can beat steak and burgers..."
+    case .chinese:
+        return "Nice selection! lets practice to use those chopsticks!"
+        
+    case .italian:
+        return "Nice selection! pasta timeeeee!"
+    }
+}
 
 
 

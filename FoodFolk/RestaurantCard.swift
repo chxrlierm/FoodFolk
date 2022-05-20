@@ -18,23 +18,48 @@ struct RestaurantCard: View {
     var body: some View {
         
         VStack {
-            Text("Nice! Looks like you are going to eat at:")
             
-
-                ForEach(restaurantCard) { restaurantList in
- 
-                        Text ("\(restaurantList.name)")
-                        Text ("Cuisine Type: \(restaurantList.cuisineType.rawValue)")
-                        Text ("Price Range: \(restaurantList.priceRange.rawValue)")
-                        Text ("Rating: \(restaurantList.rating, specifier: "%.1f")")
+            ZStack{
+                Rectangle()
+                    .foregroundColor(.orange)
+                    .cornerRadius(50)
+                    .padding()
+                
+                VStack{
+                    Text("Nice! Looks like you are going to eat at:")
+                        .font(.system(size: 22, weight: .bold, design: .monospaced))
+                        .padding()
+                    
+                    
+                    ForEach(restaurantCard) { restaurantList in
                         
+                        Text ("\(restaurantList.name)")
+                            .font(.system(size: 25, weight: .heavy, design: .monospaced))
+                            .fontWeight(.heavy)
+                            .multilineTextAlignment(.center)
+                        
+                        Text ("Cuisine Type: \(restaurantList.cuisineType.rawValue)")
+                            .font(.system(size: 18, weight: .heavy, design: .monospaced))
+                            .fontWeight(.black)
+                        
+                        Text ("Price Range: \(restaurantList.priceRange.rawValue)")
+                            .font(.system(size: 18, weight: .heavy, design: .monospaced))
+                        
+                        Text ("Rating: \(restaurantList.rating, specifier: "%.1f")")
+                            .font(.system(size: 18, weight: .heavy, design: .monospaced))
+
                         Image("\(restaurantList.image)")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 100)
-       
+                            .frame(width: 200)
+                        
+                        
+                    }//Endof ForEach
+                }.foregroundColor(.white)
                     
-                }//Endof ForEach
+                
+            }
+            
             
             
             
@@ -42,7 +67,7 @@ struct RestaurantCard: View {
                 NavigationLink(isActive: $showFavorites) {
                     
                     FavoritePlacesView(favorite: restaurantList)
-
+                    
                     
                 } label: {
                     EmptyView()
@@ -53,7 +78,7 @@ struct RestaurantCard: View {
                     if favoriteState {
                         addToFavorites()
                     }
-
+                    
                     
                 }, label: {
                     Text("Save to Favorites")
@@ -63,35 +88,35 @@ struct RestaurantCard: View {
                 
                 Spacer()
                 
-//                if favoriteState {
-//
-//                    Image(systemName: "heart.fill")
-//                        .resizable()
-//                        .scaledToFit()
-//                        .frame(width: 50)
-//                        .foregroundColor(.red)
-//
-//
-//                }else {
-//                    Image(systemName: "heart")
-//                        .resizable()
-//                        .scaledToFit()
-//                        .frame(width: 25)
-//                        .foregroundColor(.white)
-//
-//                }
-
-               
+                //                if favoriteState {
+                //
+                //                    Image(systemName: "heart.fill")
+                //                        .resizable()
+                //                        .scaledToFit()
+                //                        .frame(width: 50)
+                //                        .foregroundColor(.red)
+                //
+                //
+                //                }else {
+                //                    Image(systemName: "heart")
+                //                        .resizable()
+                //                        .scaledToFit()
+                //                        .frame(width: 25)
+                //                        .foregroundColor(.white)
+                //
+                //                }
+                
+                
                 
                 NavigationLink(isActive: $showHomeView) {
                     
                     HomeView(name: "", restaurantInfo: Restaurant(name: "", cuisineType: .mexican, priceRange: .two, rating: 4.5, image: ""))
-
+                    
                     
                 } label: {
                     EmptyView()
                 }
-
+                
                 Button {
                     
                     showHomeView = true
@@ -99,10 +124,10 @@ struct RestaurantCard: View {
                 } label: {
                     Text("HOME")
                 }
-
-
+                
+                
             }.padding()
-        
+            
         }//End of VStack
         
         Spacer()
