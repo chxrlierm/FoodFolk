@@ -14,17 +14,13 @@ struct FilterRestaurantView: View {
     @State var clickBtn: Bool = true
     @State var selectPriceRangeIndex = 0
     @State var showAllRestaurantsView: Bool = false
-
-    
     
     @Environment(\.presentationMode) private var presentationMode
-    
     
     
     var body: some View {
         
         VStack {
-            
             
             List{
                 
@@ -46,12 +42,13 @@ struct FilterRestaurantView: View {
             
             
             ForEach (Prices.allCases, id: \.self){ price in
+                
                 NavigationLink(isActive: $showAllRestaurantsView) {
                     
-   
+                    
                     RestaurantCard(restaurantList: restaurant, favoriteState: $clickBtn)
                     
-
+                    
                     
                 } label: {
                     
@@ -68,12 +65,19 @@ struct FilterRestaurantView: View {
                     
                 } label: {
                     Text("\(price.rawValue)")
+                        .font(.system(size: 25, weight: .heavy, design: .monospaced))
                 }
-                
-                
+                .frame(width: 150, height: 45)
+                .foregroundColor(.white)
+                .background(.orange)
+                .cornerRadius(10)
+                .padding(5)
+  
             }//End of forEach FOR CUISINETYPE
             
         }//EndOFVStack
+        
+        Spacer()
     }
 }
 

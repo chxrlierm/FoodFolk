@@ -65,9 +65,7 @@ struct ContentView: View {
                     .background(.orange)
                     .cornerRadius(5)
                     
-                    
-                    
-                
+
                 Spacer()
                 
             }//End of VStack

@@ -19,6 +19,7 @@ struct HomeView: View {
             List{
                 NavigationLink {
                     RestaurantSelectionView(restaurant: restaurantInfo)
+                    
                 } label: {
                     Image(systemName: "questionmark.circle")
                     Text("Start your search here!")
@@ -50,10 +51,9 @@ struct HomeView: View {
                 }
                 
                 
-                
             }.navigationTitle("Welcome \(name)")
-                
-               
+            
+            
         }// End of VStack
         
         

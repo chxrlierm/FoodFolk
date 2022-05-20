@@ -204,6 +204,14 @@ func filterArray () {
     
 }
 
+func resetData () {
+    
+    filteredRestaurant = []
+
+    restaurantCard = []
+    
+}
+
 
 
 

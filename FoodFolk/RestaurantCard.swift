@@ -10,6 +10,8 @@ import SwiftUI
 struct RestaurantCard: View {
     var restaurantList: Restaurant
     @Binding var favoriteState: Bool
+    @State var showHomeView: Bool = false
+    @State var showFavorites: Bool = false
     @Environment(\.presentationMode) private var presentationMode
     
     
@@ -37,9 +39,17 @@ struct RestaurantCard: View {
             
             
             HStack{
-                Button(action: {
-                    favoriteState.toggle()
+                NavigationLink(isActive: $showFavorites) {
                     
+                    FavoritePlacesView(favorite: restaurantList)
+
+                    
+                } label: {
+                    EmptyView()
+                }
+                Button(action: {
+                    
+                    showFavorites = true
                     if favoriteState {
                         addToFavorites()
                     }
@@ -47,39 +57,55 @@ struct RestaurantCard: View {
                     
                 }, label: {
                     Text("Save to Favorites")
-                    Image(systemName: "plus")
+                    
                     
                 })
                 
-                if favoriteState {
+                Spacer()
+                
+//                if favoriteState {
+//
+//                    Image(systemName: "heart.fill")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 50)
+//                        .foregroundColor(.red)
+//
+//
+//                }else {
+//                    Image(systemName: "heart")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 25)
+//                        .foregroundColor(.white)
+//
+//                }
+
+               
+                
+                NavigationLink(isActive: $showHomeView) {
                     
-                    Image(systemName: "heart.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 50)
-                        .foregroundColor(.red)
-                        
+                    HomeView(name: "", restaurantInfo: Restaurant(name: "", cuisineType: .mexican, priceRange: .two, rating: 4.5, image: ""))
+
                     
-                }else {
-                    Image(systemName: "heart")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 25)
-                        .foregroundColor(.white)
-                        
+                } label: {
+                    EmptyView()
                 }
 
-                Spacer()
                 Button {
-                    presentationMode.wrappedValue.dismiss()
+                    
+                    showHomeView = true
+                    
                 } label: {
-                    Text("Try Again")
+                    Text("HOME")
                 }
 
 
             }.padding()
         
         }//End of VStack
+        
+        Spacer()
     }
 }
 

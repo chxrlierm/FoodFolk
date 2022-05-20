@@ -30,7 +30,7 @@ struct AllRestaurantsView: View {
                     }.padding(5)
                     
                 }//end of ForEach
-            }// End of List
+            }.navigationTitle("FoodFolk")// End of List
         
         }//End of VStack
     }
