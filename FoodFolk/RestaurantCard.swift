@@ -21,7 +21,7 @@ struct RestaurantCard: View {
             
             ZStack{
                 Rectangle()
-                    .foregroundColor(.orange)
+                    .foregroundColor(Color(hue: 0.066, saturation: 0.594, brightness: 0.948))
                     .cornerRadius(50)
                     .padding()
                 

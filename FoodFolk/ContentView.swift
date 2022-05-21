@@ -19,7 +19,7 @@ struct ContentView: View {
             VStack {
                 Text("Welcome to FoodFolk!")
                     .font(.largeTitle)
-                    .foregroundColor(.orange)
+                    .foregroundColor(Color(hue: 0.066, saturation: 0.594, brightness: 0.948))
                     .padding(.bottom)
                 
                 Text("The app that tells you where to eat...")
@@ -44,7 +44,7 @@ struct ContentView: View {
                             RoundedRectangle(cornerRadius: 5)
                                 .stroke(.black, lineWidth: 1)
                         }
-                           
+                    
                     
                 }.padding()
                 
@@ -55,25 +55,21 @@ struct ContentView: View {
                     Text ("Let's Start")
                         .font(.system(size: 20, weight: .heavy, design: .monospaced))
                         .foregroundColor(.white)
- 
+                    
                 })//.disabled(userInput.count < 2)
                     .frame(width: 150, height: 40)
                     .foregroundColor(.white)
-                    .background(.orange)
+                    .background(Color(hue: 0.066, saturation: 0.594, brightness: 0.948))
                     .cornerRadius(10)
-                    
-                    
-                    
+
                 
                 Spacer()
                 
             }//End of VStack
-            
-            
+
             
         }// End of NavigationView
-        
-        
+ 
     }
 }
 

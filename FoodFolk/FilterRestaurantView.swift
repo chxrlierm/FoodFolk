@@ -24,13 +24,13 @@ struct FilterRestaurantView: View {
                 section = cusineTypeStatus(cusineType: CuisineType(rawValue: restaurantLists.cuisineType.rawValue) ?? CuisineType.american)
                 
             }
-   
-           return section
-
+            
+            return section
+            
         }
- 
-    }
         
+    }
+    
     @Environment(\.presentationMode) private var presentationMode
     
     
@@ -40,13 +40,12 @@ struct FilterRestaurantView: View {
             Text ("\(textSelection)")
                 .padding(.bottom, 20)
                 .font(.system(size: 22, weight: .bold, design: .rounded))
-                .foregroundColor(.orange)
+                .foregroundColor(Color(hue: 0.066, saturation: 0.594, brightness: 0.948))
             
             Text("What price range will you prefer?")
                 .padding(.bottom, 20)
                 .font(.system(size: 18, weight: .semibold, design: .serif))
                 .foregroundColor(.black)
-                
             
             
             ForEach (Prices.allCases, id: \.self){ price in
@@ -77,10 +76,10 @@ struct FilterRestaurantView: View {
                 }
                 .frame(width: 150, height: 45)
                 .foregroundColor(.white)
-                .background(.orange)
+                .background(Color(hue: 0.066, saturation: 0.594, brightness: 0.948))
                 .cornerRadius(10)
                 .padding(5)
-  
+                
             }//End of forEach FOR CUISINETYPE
             
         }//EndOFVStack

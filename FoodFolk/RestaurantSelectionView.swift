@@ -25,8 +25,8 @@ struct RestaurantSelectionView: View {
                 
             
             Text("Starving is not cool!")
-                .font(.system(size: 20, weight: .bold, design: .monospaced))
-                .foregroundColor(.orange)
+                .font(.system(size: 20, weight: .heavy, design: .monospaced))
+                .foregroundColor(Color(hue: 0.066, saturation: 0.594, brightness: 0.948))
                 .padding(.bottom, 20)
                 
 
@@ -60,7 +60,7 @@ struct RestaurantSelectionView: View {
                 }
                 .frame(width: 150, height: 45)
                 .foregroundColor(.white)
-                .background(.orange)
+                .background(Color(hue: 0.066, saturation: 0.594, brightness: 0.948))
                 .cornerRadius(10)
                 .padding(5)
                 

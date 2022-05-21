@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-enum Color: String {
-    case purple = "American"
-    case navyblue = "Chinese"
-    case blue = "Mexican"
-    case green = "Italian"
+enum Cuisine: String {
+    case american = "American"
+    case chinese = "Chinese"
+    case mexican = "Mexican"
+    case italian = "Italian"
     case empty = "Please press SPIN"
 }
 
 
 struct Sector: Equatable {
     let number: Int
-    let color: Color
+    let cuisineType: Cuisine
 }
 
 
@@ -31,18 +31,18 @@ struct RouletteView: View {
     let halfSector = 360.0 / 8.0 / 2.0
     
     let sectors: [Sector] = [
-        Sector(number: 1, color: .purple),
-        Sector(number: 2, color: .navyblue),
-        Sector(number: 3, color: .blue),
-        Sector(number: 4, color: .green),
-        Sector(number: 5, color: .purple),
-        Sector(number: 6, color: .navyblue),
-        Sector(number: 7, color: .blue),
-        Sector(number: 8, color: .green),
+        Sector(number: 1, cuisineType: .american),
+        Sector(number: 2, cuisineType: .chinese),
+        Sector(number: 3, cuisineType: .mexican),
+        Sector(number: 4, cuisineType: .italian),
+        Sector(number: 5, cuisineType: .american),
+        Sector(number: 6, cuisineType: .chinese),
+        Sector(number: 7, cuisineType: .mexican),
+        Sector(number: 8, cuisineType: .italian),
     ]
     
     var spinAnimation: Animation {
-        Animation.easeOut(duration: 1.5)
+        Animation.easeOut(duration: 2.5)
             .repeatCount(1, autoreverses: false)
     }
     
@@ -53,9 +53,9 @@ struct RouletteView: View {
     
     func sectorFromAngle(angle: Double) -> String {
         var i = 1
-        var sector: Sector = Sector(number: 0, color: .empty)
+        var sector: Sector = Sector(number: 0, cuisineType: .empty)
         
-        while sector == Sector(number: 0, color: .empty) && i < sectors.count {
+        while sector == Sector(number: 0, cuisineType: .empty) && i < sectors.count {
             let start: Double = halfSector * Double((i*2)) - halfSector
             let end: Double = halfSector * Double((i*2 + 1))
             
@@ -64,7 +64,7 @@ struct RouletteView: View {
             }
             i+=1
         }
-        return "Restaurant:\n\(sector.color.rawValue)"
+        return "Restaurant:\n\(sector.cuisineType.rawValue)"
     }
     
     
@@ -97,7 +97,7 @@ struct RouletteView: View {
             .disabled(isAnimating == true)
             .frame(width: 150, height: 45)
             .foregroundColor(.white)
-            .background(.orange)
+            .background(Color(hue: 0.066, saturation: 0.594, brightness: 0.948))
             .cornerRadius(10)
             .font(.system(size: 26, weight: .heavy, design: .monospaced))
             

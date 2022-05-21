@@ -22,7 +22,12 @@ struct HomeView: View {
                     
                 } label: {
                     Image(systemName: "questionmark.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25)
+                        
                     Text("Start your search here!")
+                        .font(.system(size: 18, weight: .bold, design: .monospaced))
                 }
                 
                 NavigationLink {
@@ -52,6 +57,11 @@ struct HomeView: View {
                 
                 
             }.navigationTitle("Welcome \(name)")
+                .background(Color(hue: 0.066, saturation: 0.394, brightness: 1.0).ignoresSafeArea())
+                .onAppear {
+                    // Set the default to clear
+                    UITableView.appearance().backgroundColor = .clear
+                }
             
             
         }// End of VStack
