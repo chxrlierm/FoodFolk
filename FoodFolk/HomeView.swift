@@ -25,23 +25,32 @@ struct HomeView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 25)
-                        
+                    
                     Text("Start your search here!")
                         .font(.system(size: 18, weight: .bold, design: .monospaced))
                 }
                 
                 NavigationLink {
                     FavoritePlacesView(favorite: Restaurant(name: "", cuisineType: .mexican, priceRange: .two, rating: 5.0, image: ""))
+                    
                 } label: {
                     Image(systemName: "star.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25)
                     Text("Favorite Places")
+                        .font(.system(size: 18, weight: .bold, design: .monospaced))
                 }
                 
                 NavigationLink {
                     RouletteView()
                 } label: {
                     Image(systemName: "sun.max.circle")
-                    Text("Random Roulette!")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25)
+                    Text("Roulette Time!!!")
+                        .font(.system(size: 18, weight: .bold, design: .monospaced))
                 }
                 
                 NavigationLink {
@@ -53,6 +62,7 @@ struct HomeView: View {
                         .frame(width: 25)
                         .foregroundColor(.white)
                     Text("Restaurants List")
+                        .font(.system(size: 18, weight: .bold, design: .monospaced))
                 }
                 
                 

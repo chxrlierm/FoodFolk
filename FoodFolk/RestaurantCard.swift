@@ -15,11 +15,12 @@ struct RestaurantCard: View {
     @Environment(\.presentationMode) private var presentationMode
     
     
+    
     var body: some View {
         
         VStack {
             
-            ZStack{
+            ZStack(alignment: .center){
                 Rectangle()
                     .foregroundColor(Color(hue: 0.066, saturation: 0.594, brightness: 0.948))
                     .cornerRadius(50)
@@ -27,14 +28,15 @@ struct RestaurantCard: View {
                 
                 VStack{
                     Text("Nice! Looks like you are going to eat at:")
-                        .font(.system(size: 22, weight: .bold, design: .monospaced))
-                        .padding()
+                        .foregroundColor(Color.secondary)
+                        .font(.system(size: 22, weight: .heavy, design: .monospaced))
+                        .padding(15)
                     
                     
                     ForEach(restaurantCard) { restaurantList in
                         
                         Text ("\(restaurantList.name)")
-                            .font(.system(size: 25, weight: .heavy, design: .monospaced))
+                            .font(.system(size: 29, weight: .heavy, design: .monospaced))
                             .fontWeight(.heavy)
                             .multilineTextAlignment(.center)
                         
@@ -47,21 +49,20 @@ struct RestaurantCard: View {
                         
                         Text ("Rating: \(restaurantList.rating, specifier: "%.1f")")
                             .font(.system(size: 18, weight: .heavy, design: .monospaced))
-
+                            .padding(.bottom, 10)
+                        
                         Image("\(restaurantList.image)")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 200)
+                            .frame(width: 150)
                         
                         
                     }//Endof ForEach
                 }.foregroundColor(.white)
-                    
+                    .padding(20)
                 
+                Spacer()
             }
-            
-            
-            
             
             HStack{
                 NavigationLink(isActive: $showFavorites) {
@@ -82,30 +83,10 @@ struct RestaurantCard: View {
                     
                 }, label: {
                     Text("Save to Favorites")
+                        .font(.system(size: 18, weight: .heavy, design: .monospaced))
                     
                     
                 })
-                
-                Spacer()
-                
-                //                if favoriteState {
-                //
-                //                    Image(systemName: "heart.fill")
-                //                        .resizable()
-                //                        .scaledToFit()
-                //                        .frame(width: 50)
-                //                        .foregroundColor(.red)
-                //
-                //
-                //                }else {
-                //                    Image(systemName: "heart")
-                //                        .resizable()
-                //                        .scaledToFit()
-                //                        .frame(width: 25)
-                //                        .foregroundColor(.white)
-                //
-                //                }
-                
                 
                 
                 NavigationLink(isActive: $showHomeView) {
@@ -117,20 +98,20 @@ struct RestaurantCard: View {
                     EmptyView()
                 }
                 
-                Button {
-                    
-                    showHomeView = true
-                    
-                } label: {
-                    Text("HOME")
-                }
+                
+            }.navigationBarItems(trailing: Button(action: {
                 
                 
-            }.padding()
+                showHomeView = true
+                //presentationMode.wrappedValue.dismiss()
+                
+            }, label: {
+                Text("home".uppercased())
+                    .padding(10)
+            }))
             
-        }//End of VStack
-        
-        Spacer()
+            
+        }
     }
 }
 

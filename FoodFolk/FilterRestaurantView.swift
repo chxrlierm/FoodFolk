@@ -44,7 +44,7 @@ struct FilterRestaurantView: View {
             
             Text("What price range will you prefer?")
                 .padding(.bottom, 20)
-                .font(.system(size: 18, weight: .semibold, design: .serif))
+                .font(.system(size: 20, weight: .semibold, design: .serif))
                 .foregroundColor(.black)
             
             

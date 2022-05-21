@@ -216,16 +216,16 @@ func cusineTypeStatus (cusineType: CuisineType) -> String {
     
     switch cusineType {
     case .mexican:
-        return "Nice selection! I see you like SPICY huh?!"
+        return "Nice selection! I see you like SPICY huh?! 🌶"
         
     case .american:
-        return "Nice selection! no one can beat steak and burgers..."
+        return "Nice selection! no one can beat steak and burgers! 🍔"
         
     case .chinese:
-        return "Nice selection! lets practice to use those chopsticks!"
+        return "Nice selection! Lets practice those Chopsticks 🥢!!"
         
     case .italian:
-        return "Nice selection! pasta timeeeee!"
+        return "Nice selection! Pasta time!!! 🍝"
     }
 }
 

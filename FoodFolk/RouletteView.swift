@@ -42,7 +42,7 @@ struct RouletteView: View {
     ]
     
     var spinAnimation: Animation {
-        Animation.easeOut(duration: 2.5)
+        Animation.easeOut(duration: 2.0)
             .repeatCount(1, autoreverses: false)
     }
     
@@ -74,16 +74,20 @@ struct RouletteView: View {
                 .multilineTextAlignment(.center)
                 .font(.system(size: 25, weight: .bold, design: .monospaced))
                 .foregroundColor(.orange)
+            
             Image("Arrow")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 25, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            
             Image("Roulette2")
                 .resizable()
                 .scaledToFit()
                 .rotationEffect(Angle(degrees: spinDegrees))
-                .frame(width: 300, height: 300, alignment: .center)
+                .frame(width: 350, height: 350, alignment: .center)
                 .animation(spinAnimation)
+                .padding(.bottom, 20)
+            
             Button("SPIN") {
                 isAnimating = true
                 rand = Double.random(in: 1...360)

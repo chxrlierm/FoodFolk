@@ -19,19 +19,19 @@ struct RestaurantSelectionView: View {
         VStack {
             
             Text("Let's find you the best option where to eat!")
-                .font(.system(size: 16, weight: .bold, design: .monospaced))
+                .font(.system(size: 18, weight: .bold, design: .monospaced))
                 .foregroundColor(.black)
                 .padding(.bottom)
                 
             
             Text("Starving is not cool!")
-                .font(.system(size: 20, weight: .heavy, design: .monospaced))
+                .font(.system(size: 22, weight: .heavy, design: .monospaced))
                 .foregroundColor(Color(hue: 0.066, saturation: 0.594, brightness: 0.948))
                 .padding(.bottom, 20)
                 
 
             Text("Which type of food would you like to eat?")
-                .font(.system(size: 16, weight: .semibold, design: .default))
+                .font(.system(size: 18, weight: .semibold, design: .default))
                 .padding(.bottom, 20)
             
             ForEach (CuisineType.allCases, id: \.self){ restType in
