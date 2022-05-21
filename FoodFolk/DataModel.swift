@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-enum CusineTypes: String, CaseIterable {
+enum CuisineType: String, CaseIterable {
     
     case american = "American"
     case mexican = "Mexican"
@@ -30,7 +30,7 @@ struct Restaurant: Identifiable {
     
     var id = UUID().uuidString
     var name: String
-    var cuisineType: CusineTypes
+    var cuisineType: CuisineType
     var priceRange: Prices
     var rating: Double
     var image: String
@@ -46,25 +46,25 @@ extension Restaurant {
         //AMERICAN LIST
         
         Restaurant (name: "Palace Grill Restaurant",
-                    cuisineType: CusineTypes.american,
+                    cuisineType: CuisineType.american,
                     priceRange: Prices.one,
                     rating: 4.6,
                     image: "Palace"),
         
         Restaurant (name: "Inspiration Kitchens",
-                    cuisineType: CusineTypes.american,
+                    cuisineType: CuisineType.american,
                     priceRange: Prices.two,
                     rating: 4.7,
                     image: "Inspiration"),
         
         Restaurant (name: "S.K.Y",
-                    cuisineType: CusineTypes.american,
+                    cuisineType: CuisineType.american,
                     priceRange: Prices.three,
                     rating: 4.7,
                     image: "sky"),
         
         Restaurant (name: "Alinea",
-                    cuisineType: CusineTypes.american,
+                    cuisineType: CuisineType.american,
                     priceRange: Prices.four,
                     rating: 4.6,
                     image: "alinea"),
@@ -72,25 +72,25 @@ extension Restaurant {
         //CHINESE LIST
         
         Restaurant (name: "China Snack",
-                    cuisineType: CusineTypes.chinese,
+                    cuisineType: CuisineType.chinese,
                     priceRange: Prices.one,
                     rating: 4.6,
                     image: "chinaSnack"),
         
         Restaurant (name: "Xi'an Cuisine",
-                    cuisineType: CusineTypes.chinese,
+                    cuisineType: CuisineType.chinese,
                     priceRange: Prices.two,
                     rating: 4.7,
                     image: "Xian"),
         
         Restaurant (name: "Duck Duck Goat",
-                    cuisineType: CusineTypes.chinese,
+                    cuisineType: CuisineType.chinese,
                     priceRange: Prices.three,
                     rating: 4.6,
                     image: "duckDuckGoat"),
         
         Restaurant (name: "Shangai Terrace",
-                    cuisineType: CusineTypes.chinese,
+                    cuisineType: CuisineType.chinese,
                     priceRange: Prices.four,
                     rating: 4.6,
                     image: "Shanghai"),
@@ -98,25 +98,25 @@ extension Restaurant {
         //MEXICAN List
         
         Restaurant (name: "El Mariachi",
-                    cuisineType: CusineTypes.mexican,
+                    cuisineType: CuisineType.mexican,
                     priceRange: Prices.one,
                     rating: 4.6,
                     image: "ElMariachi"),
         
         Restaurant (name: "XOCO",
-                    cuisineType: CusineTypes.mexican,
+                    cuisineType: CuisineType.mexican,
                     priceRange: Prices.two,
                     rating: 4.5,
                     image: "Xoco"),
         
         Restaurant (name: "Leña Brava",
-                    cuisineType: CusineTypes.mexican,
+                    cuisineType: CuisineType.mexican,
                     priceRange: Prices.three,
                     rating: 4.5,
                     image: "Lenabrava"),
         
         Restaurant (name: "Tzuco",
-                    cuisineType: CusineTypes.mexican,
+                    cuisineType: CuisineType.mexican,
                     priceRange: Prices.four,
                     rating: 4.6,
                     image: "tzuco"),
@@ -124,25 +124,25 @@ extension Restaurant {
         //ITALIAN List
         
         Restaurant (name: "Pasta Palazzo",
-                    cuisineType: CusineTypes.italian,
+                    cuisineType: CuisineType.italian,
                     priceRange: Prices.one,
                     rating: 4.6,
                     image: "pastaPalazzo"),
         
         Restaurant (name: "Bacchanalia",
-                    cuisineType: CusineTypes.italian,
+                    cuisineType: CuisineType.italian,
                     priceRange: Prices.two,
                     rating: 4.7,
                     image: "bacchanalia"),
         
         Restaurant (name: "Gaia Ristorante Italiano",
-                    cuisineType: CusineTypes.italian,
+                    cuisineType: CuisineType.italian,
                     priceRange: Prices.three,
                     rating: 4.9,
                     image: "gaia"),
         
         Restaurant (name: "Segnatore",
-                    cuisineType: CusineTypes.italian,
+                    cuisineType: CuisineType.italian,
                     priceRange: Prices.four,
                     rating: 4.6,
                     image: "segnatore"),
@@ -212,13 +212,15 @@ func resetData () {
     
 }
 
-func cusineTypeStatus (cusineType: CusineTypes) -> String {
+func cusineTypeStatus (cusineType: CuisineType) -> String {
     
     switch cusineType {
     case .mexican:
         return "Nice selection! I see you like SPICY huh?!"
+        
     case .american:
         return "Nice selection! no one can beat steak and burgers..."
+        
     case .chinese:
         return "Nice selection! lets practice to use those chopsticks!"
         

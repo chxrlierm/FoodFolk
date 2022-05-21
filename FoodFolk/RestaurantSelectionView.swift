@@ -13,6 +13,7 @@ struct RestaurantSelectionView: View {
     @State var showAllRestaurantsView: Bool = false
     
     
+    
     var body: some View {
         
         VStack {
@@ -33,7 +34,7 @@ struct RestaurantSelectionView: View {
                 .font(.system(size: 16, weight: .semibold, design: .default))
                 .padding(.bottom, 20)
             
-            ForEach (CusineTypes.allCases, id: \.self){ restType in
+            ForEach (CuisineType.allCases, id: \.self){ restType in
                 NavigationLink(isActive: $showAllRestaurantsView) {
                     
                     FilterRestaurantView(restaurant: restaurant)

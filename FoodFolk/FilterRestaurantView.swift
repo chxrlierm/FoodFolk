@@ -17,30 +17,20 @@ struct FilterRestaurantView: View {
     
     var textSelection: String {
         get {
+            var section = ""
             
-          
-
-            if restaurant.cuisineType.rawValue == "Mexican" {
-                return cusineTypeStatus(cusineType: .mexican)
-            }else if (restaurant.cuisineType.rawValue == "American") {
-                return cusineTypeStatus(cusineType: .american)
+            for restaurantLists in filteredRestaurant {
+                
+                section = cusineTypeStatus(cusineType: CuisineType(rawValue: restaurantLists.cuisineType.rawValue) ?? CuisineType.american)
+                
             }
-            
-            return "MAKE A DIFFERENT SELECTION"
-            
+   
+           return section
+
         }
+ 
     }
-    
-//    var tipAmount: Double {
-//
-//        get {
-//            let billInput = Double(billAmountInput) ?? 0
-//
-//            return billInput * tipPercentage/100
-//        }
-//
-//    }
-    
+        
     @Environment(\.presentationMode) private var presentationMode
     
     
@@ -48,23 +38,15 @@ struct FilterRestaurantView: View {
         
         VStack {
             Text ("\(textSelection)")
-            List{
-
-                
-                ForEach(filteredRestaurant) { restaurantLists in
-                    
-                    VStack (alignment: .leading) {
-                        
-                        Text ("\(restaurantLists.name)")
-                        Text ("Cuisine Type: \(restaurantLists.cuisineType.rawValue)")
-                        Text ("Rating: \(restaurantLists.rating, specifier: "%.1f")")
-                    }.padding(5)
-                    
-                }//end of ForEach
-            }// End of List
+                .padding(.bottom, 20)
+                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .foregroundColor(.orange)
             
             Text("What price range will you prefer?")
                 .padding(.bottom, 20)
+                .font(.system(size: 18, weight: .semibold, design: .serif))
+                .foregroundColor(.black)
+                
             
             
             ForEach (Prices.allCases, id: \.self){ price in
@@ -91,7 +73,7 @@ struct FilterRestaurantView: View {
                     
                 } label: {
                     Text("\(price.rawValue)")
-                        .font(.system(size: 25, weight: .heavy, design: .monospaced))
+                        .font(.system(size: 22, weight: .heavy, design: .monospaced))
                 }
                 .frame(width: 150, height: 45)
                 .foregroundColor(.white)
@@ -102,6 +84,7 @@ struct FilterRestaurantView: View {
             }//End of forEach FOR CUISINETYPE
             
         }//EndOFVStack
+        .padding()
         
         Spacer()
     }

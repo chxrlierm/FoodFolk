@@ -56,7 +56,7 @@ struct ContentView: View {
                         .font(.system(size: 20, weight: .heavy, design: .monospaced))
                         .foregroundColor(.white)
  
-                }).disabled(userInput.count < 2)
+                })//.disabled(userInput.count < 2)
                     .frame(width: 150, height: 40)
                     .foregroundColor(.white)
                     .background(.orange)
